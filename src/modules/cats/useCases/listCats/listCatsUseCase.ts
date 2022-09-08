@@ -1,12 +1,12 @@
-import { Injectable } from "@nestjs/common";
-// import { ITagsRepository } from "../../contracts/repositories/ITagsRepository";
+import { Inject, Injectable } from "@nestjs/common";
+import { ICatsRepository } from "../../contracts/repositories/ICatsRepository";
 // import { ITagModel } from "../../contracts/models/ITagModel";
 
 @Injectable()
 export class ListCatsUseCase {
     constructor(
-        // @Inject('TagsRepository')
-        // private tagsRepository: ITagsRepository,
+        @Inject('CatsRepository')
+        private catsRepository: ICatsRepository,
     ) { }
 
     public async execute(): Promise<string> {

@@ -1,8 +1,9 @@
+import { ICatsRepository } from 'src/modules/cats/contracts/repositories/ICatsRepository';
 import { EntityRepository, getMongoRepository, MongoRepository } from 'typeorm';
 import { Cats } from '../schemas/Cats';
 
 @EntityRepository(Cats)
-export class CatssRepository {
+export class CatsRepository  implements ICatsRepository{
     private ormRepository: MongoRepository<Cats>;
 
     constructor() {
